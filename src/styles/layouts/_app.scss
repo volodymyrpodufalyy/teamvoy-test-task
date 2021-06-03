@@ -19,20 +19,12 @@ header {
   }
 }
 
-.pokemons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.wrapper {
   height: fit-content;
-  &__list {
-    width: 60%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-  }
-  &__list li {
-    padding: 1rem;
-  }
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 34, 67, 0.3),
+    rgba(245, 34, 67, 0.7),
+    
+  )
 }
