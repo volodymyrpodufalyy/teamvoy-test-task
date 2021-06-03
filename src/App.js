@@ -3,6 +3,7 @@ import { PokemonsList } from "components"
 
 const App = () => {
   
+
   return (
     <div className="wrapper">
       <header>
