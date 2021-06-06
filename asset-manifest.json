@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/teamvoy-test-task/static/css/main.07528df5.chunk.css",
+    "main.js": "/teamvoy-test-task/static/js/main.09a41d75.chunk.js",
+    "main.js.map": "/teamvoy-test-task/static/js/main.09a41d75.chunk.js.map",
+    "runtime-main.js": "/teamvoy-test-task/static/js/runtime-main.1704a14f.js",
+    "runtime-main.js.map": "/teamvoy-test-task/static/js/runtime-main.1704a14f.js.map",
+    "static/js/2.79116553.chunk.js": "/teamvoy-test-task/static/js/2.79116553.chunk.js",
+    "static/js/2.79116553.chunk.js.map": "/teamvoy-test-task/static/js/2.79116553.chunk.js.map",
+    "index.html": "/teamvoy-test-task/index.html",
+    "static/css/main.07528df5.chunk.css.map": "/teamvoy-test-task/static/css/main.07528df5.chunk.css.map",
+    "static/js/2.79116553.chunk.js.LICENSE.txt": "/teamvoy-test-task/static/js/2.79116553.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1704a14f.js",
+    "static/js/2.79116553.chunk.js",
+    "static/css/main.07528df5.chunk.css",
+    "static/js/main.09a41d75.chunk.js"
+  ]
+}
