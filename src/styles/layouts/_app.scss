@@ -1,20 +1,49 @@
 header {
   width: 100%;
-  height: 4em;
+  height: 5rem;
+  background: linear-gradient(
+    to bottom,
+    #008CFF,
+    #67abe2,
+  );
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
   display: flex;
+  position: fixed;
   align-items: center;
   justify-content: center;
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 14%;
+    color: #fff;
+    font-size: 1.2em;
+    width: 15%;
+    label {
+      width: 100%;
+      padding-bottom: 0.2rem;
+    }
+    select {
+      width: 100%;
+      background-color: #fff;
+      padding: 0.5rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 0.4rem;
+    }
+  }
   .pokedex-title {
-    margin: 1.5rem 0  1rem 0;
+    background-color: #fff;
+    margin: 1rem 0  1rem 0;
     height: 3rem;
-    width: 20em;
+    width: 40%;
     border: 2px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
     h1 {
       font-weight: 500;
-
     }
   }
 }
@@ -27,4 +56,59 @@ header {
     rgba(245, 34, 67, 0.7),
     
   )
+}
+
+@media (min-width: 2000px){
+  header {
+    height: 8rem;
+  }
+  .filter {
+    label {
+      font-size: 1.8rem;
+    }
+    select {
+      font-size: 1.9rem !important;
+
+      // option {
+      // }
+      height: 3rem;
+    }
+  }
+}
+
+@media (max-width: 770px){
+  .filter {    
+    right: 5% !important;
+    width: 20% !important;
+    label {
+      padding-bottom: 0.2rem;
+    }
+    select {
+      padding: 0.5rem;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 575px){
+  header {
+    height: 5.5rem !important;
+    width: 100%;
+  }
+  .filter {   
+    right: 8% !important; 
+    width: 100%;
+    label {
+      font-size: 0.9rem ;
+    }
+    select {
+      font-size: 0.9rem !important;
+    }
+  }
+}
+
+@media (max-width: 320px){
+  header {
+    width: 320px;
+  }
 }

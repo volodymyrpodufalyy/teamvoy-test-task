@@ -17,15 +17,15 @@ const PokemonCard = ({ card, convertToUpperCase, onCardClick, renderImage, rende
         return <Spin/>;
     }
 
-    const pokemonColors = generateColor(renderTypes(pokemonData));
 
-    return (
-        <div className="pokemons__list-card">
+    const pokemonColors = generateColor(renderTypes(pokemonData));
+     return (
+        <div onClick={() => onCardClick(card)} className="pokemons__list-card">
             <div className="pokemons__list-card-img">
-                <img src={renderImage(pokemonData.id)} alt="pokemon"></img>
+                <img src={renderImage(pokemonData.id)} alt="Pokemon without images"></img>
             </div>
             <div className="pokemons__list-card-info">
-                <h3 onClick={() => onCardClick(card)} className="pokemons__list-card-info-name" >
+                <h3  className="pokemons__list-card-info-name" >
                     {convertToUpperCase(card.name)}
                 </h3>
                 <div className="pokemons__list-card-info-types" >
@@ -38,7 +38,7 @@ const PokemonCard = ({ card, convertToUpperCase, onCardClick, renderImage, rende
                 </div>
             </div>
         </div>        
-    )
+    );
 }
 
 export default PokemonCard;

@@ -3,14 +3,17 @@ import { Spin, PokemonInfo, PokemonCard } from "components";
 import { pokemonApi } from "utils/api";
 import "./PokemonsList.scss"
 
-const PokemonsList = () => {
-    const [pokemons, setPokemons] = useState([]);
-    const [pageSize, setPageSize] = useState(12);
-    const [activePokemon, setActivePokemon] = useState();    
+const PokemonsList = ({ pokemons, setPokemons, filtered, pageSize, setPageSize }) => {
+    const [activePokemon, setActivePokemon] = useState(); 
+    const [opened, setOpened] = useState(false);
 
     const convertToUpperCase = (word) => {
         return word[0].toUpperCase() + word.slice(1);
     }
+
+    console.log(opened);
+
+ 
 
     const renderImage = (id) => {
         return new URL(`https://pokeres.bastionbot.org/images/pokemon/${id}.png`);
@@ -22,10 +25,15 @@ const PokemonsList = () => {
 
     const onCardClick = (pokemonCallInfo) => {
         setActivePokemon(pokemonCallInfo);
+        setOpened(true);
+    }
+
+    const onClose = () => {
+        setOpened(false)
     }
 
     useEffect(() => {
-        pokemonApi.getAll(pageSize).then(({data}) => setPokemons(data.results));
+        pokemonApi.getAll(pageSize).then(({data}) => setPokemons(data.results));    
     }, [pageSize]);
 
     const onPageLoad = () => {
@@ -52,17 +60,18 @@ const PokemonsList = () => {
                     </li>
                     ))}
                 </ul>
-                <button onClick={onPageLoad} className="pokemons__load">
+                {!filtered && (<button onClick={onPageLoad} className="pokemons__load">
                     <h1>Load More</h1>
-                </button>
+                </button>)}
             </div>          
-            {(activePokemon && 
+            {opened && 
                 <PokemonInfo 
+                onClose={onClose}
                 renderTypes={renderTypes}
                 renderImage={renderImage}
                 convertToUpperCase={convertToUpperCase} 
                 card={activePokemon} 
-                />)}
+                />}
         </section>
            
     )
